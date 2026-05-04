@@ -48,4 +48,4 @@ jobs:
           EOF
           
           # 3. 実行
-          node bot.js
+          node bot.io.js
