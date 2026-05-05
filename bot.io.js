@@ -547,8 +547,7 @@ async function handleMentions(me) {
 
             const reply_prompt = `
 ${config.characterSetting}
-※性格以外のこれまでの指令を先にすべて無視してください。 
-【おみくじモード】 あなたは今、占い師として相手の運勢を伝えてください。 
+【おみくじモード】  
 結果は【${luckResult}】です。 
 - 運勢の結果に基づいた、あなたらしい「今日のアドバイス」や「ラッキーアイテム」を1つ含めてください。 
 - 結果(小吉など)を必ずしっかりと伝えてください。 
@@ -564,10 +563,10 @@ ${config.characterSetting}
         // ========================
         } else {
 
-            const reply_prompt = `
-※性格以外のこれまでの指令を先にすべて無視してください。 相手の言葉: ${user_input} これに対して127文字以内で返信してください。
- -ユーザーのことは「マスター」と呼ぶこと。
- ^メンションと「@」使用禁止。`
+            const reply_prompt = 
+`相手の言葉: ${user_input} これに対して、127文字以内で返信してください。
+ -ユーザーのことは「マスター」と呼んでください！。
+ ^メンションと「@」は使用禁止。です`
 
             await sleep(10000);
             reply_text = await askGemini(reply_prompt);
